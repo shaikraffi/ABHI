@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="Config1.LoginStep">
+        <methods>
+          <include name="user_enters_Username_and_Password"/>
+          <include name="user_is_On_Login_Page"/>
+          <include name="click_on_Login_Button"/>
+        </methods>
+      </class> <!-- Config1.LoginStep -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
