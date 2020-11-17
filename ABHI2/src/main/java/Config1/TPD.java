@@ -13,19 +13,19 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-
+import functions.TestBase;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import pageObjectClasses.TPDPage;
 
 
 
-public class TPD {
+public class TPD extends TestBase {
 	
 	 static WebDriver driver;
 	public  static String downloadPath = "C:\\Users\\raffi\\Downloads";	 
 	
-	public static  TPDPage Login=new TPDPage(driver);
+	static  TPDPage Login=new TPDPage(driver);
 	 
 	 
 		
@@ -36,6 +36,7 @@ public class TPD {
 			
 				driver.manage().window().maximize();
 				
+				Login=new TPDPage(driver);
 				
 				Login.enter("2100825");	
 				

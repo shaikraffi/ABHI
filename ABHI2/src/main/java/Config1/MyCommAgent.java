@@ -83,11 +83,12 @@ public static boolean waitTillSpinnerDisable(WebDriver driver, By by)
 
 
 public static void navigateFromMenu() throws InterruptedException {
-	
-	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	Thread.sleep(2000);
+	System.out.println("1");
+	//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	Thread.sleep(4000);
 	driver.findElement(By.xpath("//ul[@class='nav']/li[5]/a")).click();
 	Thread.sleep(2000);
+	System.out.println("2");
 	
 	try {
 		String Amount=driver.findElement(By.xpath("//div[@class='statement-bottom']/div[2]/div[4]/h5")).getText();
