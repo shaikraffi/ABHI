@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="stepDefinations.TestAllureListener"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="stepDefinations.TpdDef">
+      <class name="stepDefinations.AgentComm">
         <methods>
-          <include name="verify_download_statement_is_displayed"/>
+          <include name="mouseover_onto_the_commission_amount_in_commission_card"/>
+          <include name="user_latest_three_commission_cards_are_displayed"/>
+          <include name="click_on_view_in_tool_tip"/>
+          <include name="verify_month_in_the_commission_statement_page"/>
         </methods>
-      </class> <!-- stepDefinations.TpdDef -->
+      </class> <!-- stepDefinations.AgentComm -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -2,13 +2,13 @@ Feature: To check the functionality of tpd page
 
  
 
-Scenario: To display the commission statement  within the selected cycle 
+Scenario: To display the commission statement of the selected cycle 
 
 Given User is On TPD Login Page
 When User enters Username and Password and clicks on log in
 Then Validate User is on TPD Page
 Then select cycle,month,year in the dropdown and click on search
-And verify commission statement is displayed
+And verify commission statements is displayed
 Then user clicks on show/hide
 
  
@@ -38,6 +38,6 @@ Scenario: Verify the GUI of TPD page.
 
 Given user is on tpd page
 When cycle,month,year dropdown is displayed
-Then verify table grid is dispalyed
+Then verify columns of  grid
 And verify gross total is displayed
 Then verify download statement is displayed

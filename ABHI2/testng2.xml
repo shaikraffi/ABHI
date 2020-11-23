@@ -10,7 +10,8 @@
   
   
     <classes>     
-      <class name="stepDefinations.TpdDef"/>     
+      <class name="stepDefinations.TpdDef"/> 
+    <!--  <class name="stepDefinations.AgentComm"/>   -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

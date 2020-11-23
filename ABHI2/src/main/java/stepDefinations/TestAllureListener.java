@@ -22,7 +22,8 @@ import io.qameta.allure.Attachment;
 		// Text attachments for Allure
 		@Attachment(value = "Page screenshot", type = "image/png")
 		public byte[] saveScreenshotPNG(WebDriver driver) {
-			return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			//return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES.);
+			return (byte[]) ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		}
 
 		// Text attachments for Allure
@@ -63,7 +64,7 @@ import io.qameta.allure.Attachment;
 			System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
 		//	Object testClass = iTestResult.getInstance();
 			
-			WebDriver driver = TestBase.getDriver();
+			WebDriver driver = TestBase.driver;
 			// Allure ScreenShotRobot and SaveTestLog
 			if (driver instanceof WebDriver) {
 				System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));

@@ -4,8 +4,8 @@
   <test thread-count="5" name="Test">
     <classes>
       
-      <class name="LaunchDef1"/>
-      <class name="LoginDef1"/>
+      <class name="stepDefinations.Delete"/> 
+     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

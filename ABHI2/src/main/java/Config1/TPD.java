@@ -1,6 +1,7 @@
 package Config1;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.junit.Assert;
@@ -15,36 +16,46 @@ import org.openqa.selenium.support.ui.Select;
 
 import functions.TestBase;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 import pageObjectClasses.TPDPage;
 
 
 
 public class TPD extends TestBase {
 	
-	 static WebDriver driver;
+	 //static WebDriver driver;
 	public  static String downloadPath = "C:\\Users\\raffi\\Downloads";	 
 	
-	static  TPDPage Login=new TPDPage(driver);
+	static  TPDPage Login;
+	
 	 
+	
+	//TPDPage pg = new TPDPage(driver);
 	 
 		
-			public static void launch() throws InterruptedException {
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();				
+			public static void launch() throws InterruptedException, IOException {
+			//	WebDriverManager.chromedriver().setup();
+				//driver = new ChromeDriver();	
+				
+				
+				initializeDriver();
 				driver.get("https://abhidev.azurewebsites.net/");
 			
-				driver.manage().window().maximize();
+				//driver.manage().window().maximize();
+				Login =PageFactory.initElements(driver, TPDPage.class);
 				
-				Login=new TPDPage(driver);
+				//Login=new TPDPage(driver);
 				
-				Login.enter("2100825");	
+				Login.enterUser("2100825");	
+				Login.enterPassword("123456");
+				Login.ClickOnSubmit();
 				
+			//	driver.findElement(By.xpath("//input[@formcontrolname='agentCode']")).sendKeys("2100825");			
+			//	driver.findElement(By.xpath("//input[@type='password']")).sendKeys("123456");
 				
-				driver.findElement(By.xpath("//input[@formcontrolname='agentCode']")).sendKeys("2100825");			
-				driver.findElement(By.xpath("//input[@type='password']")).sendKeys("123456");
-				driver.findElement(By.xpath("//button[@class='btn btn-login btn-default']")).click();
-				Thread.sleep(3000);				
+			//	driver.findElement(By.xpath("//button[@class='btn btn-login btn-default']")).click();
+				Thread.sleep(3000);	
+				
+				//Scroll("down");
 			}
 			
 			
@@ -54,7 +65,20 @@ public class TPD extends TestBase {
 		        JavascriptExecutor js = (JavascriptExecutor) driver;
 		         js.executeScript("arguments[0].scrollIntoView();", element);
 		     	Thread.sleep(2000);				
-				driver.findElement(By.xpath("//div[@class='download-state']/a")).click();
+				//driver.findElement(By.xpath("//div[@class='download-state']/a")).click();
+		     
+		     	Login.downloadclick();
+		     	
+		     	
+		     	
+		     	
+		     	
+		     	
+		     	
+		     	
+		     	
+		     	
+		     	
 				Thread.sleep(2000);	
 				//driver.findElement(By.xpath("//button[@class='download']")).click();
 				Thread.sleep(2000);
@@ -235,7 +259,7 @@ public class TPD extends TestBase {
 	}
 	
 	
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		
 	
 	  launch();
